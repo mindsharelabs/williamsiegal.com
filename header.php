@@ -24,17 +24,10 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="main-panel">
+<body <?php body_class((is_front_page() ? 'front-page' : '')); ?>>
 <?php
 
 include 'layout/top-header.php';
 if(is_search()) :
   include 'layout/search-header.php';
-elseif(is_404()) :
-
-elseif(is_archive()) :
-  include 'layout/archive-header.php';
-else :
-  include 'layout/page-header.php';
 endif;

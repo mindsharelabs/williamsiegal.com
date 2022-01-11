@@ -1,4 +1,135 @@
 <?php
+
+add_action("wp_ajax_seigal_get_object_slider", "seigal_get_object_slider");
+add_action("wp_ajax_nopriv_seigal_get_object_slider", "seigal_get_object_slider");
+
+
+
+
+function seigal_get_object_slider() {
+  $data = $_REQUEST;
+  $html = '';
+  if($data['action'] != 'seigal_get_object_slider') :
+    exit;
+  endif;
+  $images = get_field('images', $data['postID']);
+
+  $slides = array();
+  $thumbs = array();
+  if (has_post_thumbnail( $data['postID'] )) :
+    $slides[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'archive-slide');
+    $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
+  endif;
+  if($images) :
+    foreach ($images as $key => $image) :
+      $slides[] = wp_get_attachment_image( $image['image']['ID'], 'archive-slide');
+      $thumbs[] = wp_get_attachment_image( $image['image']['ID'], 'thumbnal-square');
+    endforeach;
+  endif;
+
+
+
+    $html = '<div class="object-slides">';
+      foreach ($slides as $key => $slide) :
+        $html .= '<div class="slide">';
+          $html .= $slide;
+        $html .= '</div>';
+      endforeach;
+    $html .= '</div>';
+
+    $html .= '<div class="object-information">';
+      $html .= '<div class="container px-0">';
+        $html .= '<div class="row">';
+          $html .= '<div class="col-12 px-3">';
+            $html .= '<h3 class="object-title">';
+              $html .= '<a href="' . get_permalink($data['postID']) . '">' .  get_the_title($data['postID']) .'</a>';
+            $html .= '</h3>';
+            $html .= siegal_object_info($data['postID']);
+          $html .= '</div>';
+        $html .= '</div>';
+      $html .= '</div>';
+    $html .= '</div>';
+
+
+    $html .= '<div class="slide-controls">';
+      $html .= '<div class="interaction slide-prev"><i class="fal fa-angle-left"></i></div>';
+      $html .= '<div class="interaction slide-next"><i class="fal fa-angle-right"></i></div>';
+    $html .= '</div>';
+
+
+    $html .= '<div class="object-slides-navigation">';
+      foreach ($thumbs as $key => $thumb) :
+        $html .= '<div class="slide-nav ' . ($key == 0 ? 'current' : '') . '" data-slide="' . $key . '">';
+          $html .= $thumb;
+        $html .= '</div>';
+      endforeach;
+    $html .= '</div>';
+
+  wp_send_json_success( $html );
+}
+
+
+
+
+function siegal_object_info($post_id, $echo = false) {
+  $regions = wp_get_object_terms( $post_id, 'regions', array());
+  $cultures = wp_get_object_terms( $post_id, 'cultures', array());
+  $meta_data = get_fields($post_id);
+  $html ='<div class="object-info">';
+
+    $html .='<div class="local">';
+    if($regions) :
+      foreach ($regions as $key => $region) :
+        $html .='<span class="region">' . $region->name . '</span>';
+        if(next($regions)) :
+          $html .=' | ';
+        endif;
+      endforeach;
+    endif;
+
+    if($cultures) :
+      foreach ($cultures as $key => $culture) :
+        $html .=', <span class="culture">' . $culture->name . '</span>';
+        if(next($cultures)) :
+          $html .=' | ';
+        endif;
+      endforeach;
+    endif;
+    $html .='</div>';
+
+    $html .=($meta_data['creation_date'] ? '<span class="creation">' . $meta_data['creation_date'] . '</span>' : '');
+    $html .=($meta_data['material'] ? '<span class="material">' . $meta_data['material'] . '</span>' : '');
+
+    if($meta_data['dimensions']) :
+      $dim = $meta_data['dimensions'];
+      $html .='<div class="dimensions">';
+        $html .=($dim['width'] ? '<span class="width">' . $dim['width'] . '</span>' : '');
+
+
+        $html .=($dim['width'] && $dim['height'] ? ' x ' : '');  //'x before the value'
+        $html .=($dim['height'] ? '<span class="height">' . $dim['height'] . '</span>' : '');
+
+
+        $html .=(($dim['height'] || $dim['width']) && $dim['length'] ? ' x ' : '');  //'x before the value'
+        $html .=($dim['length'] ? '<span class="length">' . $dim['length'] . '</span>' : '');
+      $html .='</div>';
+    endif;
+
+  $html .='</div>';
+
+  if($echo) :
+    echo $html;
+  else :
+    return $html;
+  endif;
+}
+
+
+
+
+
+
+
 function mind_format_phone($phoneNumber) {
     $phoneNumber = preg_replace('/[^0-9]/','',$phoneNumber);
 
