@@ -18,18 +18,18 @@ function seigal_get_object_slider() {
   $thumbs = array();
   if (has_post_thumbnail( $data['postID'] )) :
     $slides[] = array(
-      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'archive-slide'),
+      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'large),
       'orientation' => 'vertical'
     );
     $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
   endif;
   if($images) :
     foreach ($images as $key => $image) :
-      $width = $image['sizes']['archive-slide-width'];
-      $height = $image['sizes']['archive-slide-height'];
+      $width = $image['sizes']['large-width'];
+      $height = $image['sizes']['large-height'];
       $orientation = (($width/$height) >= 1 ? 'horizontal' : 'vertical');
       $slides[] = array(
-        'html' => wp_get_attachment_image( $image['image']['ID'], 'archive-slide'),
+        'html' => wp_get_attachment_image( $image['image']['ID'], 'large'),
         'orientation' => $orientation
       );
 
