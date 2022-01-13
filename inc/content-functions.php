@@ -171,7 +171,7 @@ function mind_format_phone($phoneNumber) {
 }
 
 
-add_filter( 'render_block', 'mapi_block_wrapper', 10, 2 );
+// add_filter( 'render_block', 'mapi_block_wrapper', 10, 2 );
 function mapi_block_wrapper( $block_content, $block ) {
   $noWrapper = array(
     'core/cover',
