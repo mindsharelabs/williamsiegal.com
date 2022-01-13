@@ -2,8 +2,8 @@
 	<footer class="footer w-100 pt-3 pb-3">
 		<div class="container">
 			<div class="row border-top-dark">
-				<div class="col-12 mt-1 py-1 copyright">
-					<p class="mb-0 text-white small muted"> <i class="fas fa-copyright"></i> <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. All rights reserved.</p>
+				<div class="col-12 mt-1 py-1 copyright text-center">
+					<p class="mb-0 small muted"> <i class="fal fa-copyright"></i> <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. All rights reserved.</p>
 				</div>
 			</div>
 		</div>
