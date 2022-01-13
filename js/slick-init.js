@@ -62,7 +62,9 @@
                   $('.slide-nav[data-slide="' + currentSlide + '"]').removeClass('current');
                   $('.slide-nav[data-slide="' + nextSlide + '"]').addClass('current');
                 });
-
+                $('html, body').animate({
+                  scrollTop: $('.object-archive-slider').offset().top - 20;
+                }, 'slow');
               });
 
             }

@@ -112,7 +112,7 @@ function siegal_object_info($post_id, $echo = false) {
     $html .=($meta_data['creation_date'] ? '<span class="creation">' . $meta_data['creation_date'] . '</span>' : '');
     $html .=($meta_data['material'] ? '<span class="material">' . $meta_data['material'] . '</span>' : '');
 
-    if($meta_data['dimensions']) :
+    if($meta_data['dimensions_old']) :
       $dim = $meta_data['dimensions_old'];
       $html .='<div class="dimensions">';
         $html .= '<span>' . $dim . '</span>';
