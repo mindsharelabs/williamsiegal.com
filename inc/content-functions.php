@@ -17,12 +17,22 @@ function seigal_get_object_slider() {
   $slides = array();
   $thumbs = array();
   if (has_post_thumbnail( $data['postID'] )) :
-    $slides[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'archive-slide');
+    $slides[] = array(
+      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'archive-slide'),
+      'orientation' => 'vertical'
+    );
     $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
   endif;
   if($images) :
     foreach ($images as $key => $image) :
-      $slides[] = wp_get_attachment_image( $image['image']['ID'], 'archive-slide');
+      $width = $image['sizes']['archive-slide-width'];
+      $height = $image['sizes']['archive-slide-height'];
+      $orientation = (($width/$height) >= 1 ? 'horizontal' : 'vertical');
+      $slides[] = array(
+        'html' => wp_get_attachment_image( $image['image']['ID'], 'archive-slide'),
+        'orientation' => $orientation
+      );
+
       $thumbs[] = wp_get_attachment_image( $image['image']['ID'], 'thumbnal-square');
     endforeach;
   endif;
@@ -31,8 +41,8 @@ function seigal_get_object_slider() {
 
     $html = '<div class="object-slides">';
       foreach ($slides as $key => $slide) :
-        $html .= '<div class="slide">';
-          $html .= $slide;
+        $html .= '<div class="slide ' . $slide['orientation'] .'">';
+          $html .= $slide['html'];
         $html .= '</div>';
       endforeach;
     $html .= '</div>';
