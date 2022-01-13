@@ -24,6 +24,8 @@
     $(document).ready(function() {
       $(document).on('click', '.slider-toggle', function() {
         var postID = $(this).attr('data-postID');
+        $('.slider-toggle').not(this).removeClass('current');
+        $(this).addClass('current');
 
         $.ajax({
           type : 'post',
@@ -32,6 +34,9 @@
           data : {
             action : 'seigal_get_object_slider',
             postID : postID
+          },
+          beforeSend : function(e) {
+            $('.object-archive-slider').html('<div class="loading"><div><i class="fal fa-circle-notch fa-spin"></i></div></div>');
           },
           success : function(responce) {
             if(responce.success == true) {
@@ -46,8 +51,6 @@
         					prevArrow: $('.slide-controls .slide-prev'),
         					// appendDots: $('.object-slides .slide-dots'),
                 });
-
-
                 $(document).on('click', '.slide-nav', function() {
                   var slideID = $(this).attr('data-slide');
                   $('.object-slides').slick('slickGoTo', slideID, false);

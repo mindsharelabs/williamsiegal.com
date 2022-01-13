@@ -416,6 +416,14 @@ header {
     .object-archive-slider {
       position: relative;
       margin-bottom: 30px;
+      .loading {
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+      }
       .object-slides {
         .slide {
           text-align: center;
@@ -501,6 +509,9 @@ header {
           border-radius: 30;
           border: 1px solid transparent;
           text-align: center;
+          align-items: center;
+          justify-content: center;
+          display: flex;
           @include transition(500ms);
           &:hover {
             background: rgba(255,255,255,.3);
@@ -511,7 +522,6 @@ header {
           &.slick-disabled {
             opacity: .4;
             color: #ccc;
-            border-color: #ccc;
             cursor: not-allowed;
           }
         }
@@ -665,10 +675,13 @@ p.wp-caption-text {
 }
 
 article {
+
   &.objects {
+
     .object-card {
       position: relative;
       display: flex;
+      border: 6px solid transparent;
       .card-information, .image-container {
 
       }
@@ -749,6 +762,12 @@ article {
         min-height: 100%;
       }
     }
+  }
+  &.current {
+    .object-card {
+      border: 6px solid $primary;
+    }
+
   }
 }
 
