@@ -36,11 +36,14 @@
             postID : postID
           },
           beforeSend : function(e) {
+            var height = $('.object-archive-slider').height();
+            console.log(height);
+            $('.object-archive-slider').height(height + 'px');
             $('.object-archive-slider').html('<div class="loading"><div><i class="fal fa-circle-notch fa-spin"></i></div></div>');
           },
           success : function(responce) {
             if(responce.success == true) {
-              $('.object-archive-slider').html(responce.data).promise().done(function(){
+              $('.object-archive-slider').height('unset').html(responce.data).promise().done(function(){
                 $('.object-slides').slick({
                   arrows : true,
                   dots : false,
