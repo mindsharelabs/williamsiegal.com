@@ -510,6 +510,10 @@ header {
     .object-archive-slider {
       position: relative;
       margin-bottom: 0px;
+      .object-information {
+        opacity: 0;
+        @include transition (500ms);
+      }
       .loading {
         width: 100%;
         min-height: 400px;
@@ -596,7 +600,7 @@ header {
         }
       }
       &:hover {
-        .object-slides-navigation, .slide-controls {
+        .object-slides-navigation, .slide-controls, .object-information {
           @include transition(100ms);
           opacity: 1;
         }
