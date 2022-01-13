@@ -8,7 +8,7 @@
       </div>
     </div>
   </header>
-  <section class="object-filters container">
+  <section class="object-filters mt-3 container">
     <div class="row">
       <div class="col-12">
         <div class="facet-container">

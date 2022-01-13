@@ -507,7 +507,7 @@ header {
     }
     .object-archive-slider {
       position: relative;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
       .loading {
         width: 100%;
         min-height: 400px;
@@ -530,6 +530,7 @@ header {
       }
 
       .slide-controls {
+        opacity: 0;
         cursor: pointer;
         display: flex;
         flex-direction: row;
@@ -541,7 +542,7 @@ header {
         top: 60%;
         color: #fff;
         width: 100%;
-
+        @include transition(500ms);
         .interaction {
           width: 70px;
           height: 70px;
@@ -569,13 +570,15 @@ header {
       .object-slides-navigation {
         width: 100%;
         margin: 0 auto;
-        margin-top: -80px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         z-index: 10;
         position: relative;
         opacity: 0;
+        height: 80px;
+        padding-bottom: 20px;
+        margin-top: -80px;
         @include transition(500ms);
         .slide-nav {
           width: 70px;
@@ -591,9 +594,8 @@ header {
         }
       }
       &:hover {
-        .object-slides-navigation {
+        .object-slides-navigation, .slide-controls {
           @include transition(100ms);
-          margin-top:-100px;
           opacity: 1;
         }
       }
