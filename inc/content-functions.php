@@ -52,7 +52,7 @@ function seigal_get_object_slider() {
         $html .= '<div class="row">';
           $html .= '<div class="col-12 px-3">';
             $html .= '<h3 class="object-title">';
-              $html .= '<a href="' . get_permalink($data['postID']) . '">' .  get_the_title($data['postID']) .'</a>';
+              $html .= get_the_title($data['postID']);
             $html .= '</h3>';
             $html .= siegal_object_info($data['postID']);
           $html .= '</div>';
