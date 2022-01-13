@@ -178,7 +178,8 @@ function mapi_block_wrapper( $block_content, $block ) {
     'core/cover',
     // 'core/button',
     'acf/leep-full-width-notice',
-    'acf/container'
+    'acf/container',
+    'core/wp-block-column'
   );
   if(!in_array($block['blockName'], $noWrapper)) :
     $content = '<div class="container">';
