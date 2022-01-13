@@ -442,6 +442,7 @@ header {
       top: 30px;
       width: 100%;
       letter-spacing: 0px;
+      color: $light;
       h1, h3 {
         &.object-title {
           text-transform: uppercase;
@@ -518,10 +519,10 @@ header {
       .object-slides {
         .slide {
           text-align: center;
-          max-height: 70vh;
+          max-height: 60vh;
           background: $black;
           img {
-            max-height: 70vh;
+            max-height: 60vh;
             width: auto;
             margin: 0 auto;
           }
@@ -770,7 +771,7 @@ article {
             }
           }
           .dimensions {
-        
+
           }
         }
         .local {

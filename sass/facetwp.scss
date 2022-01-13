@@ -1,0 +1,18 @@
+.facetwp-facet {
+  margin-bottom: 20px !important;
+  &.facetwp-type-pager {
+    button {
+      @extend .btn;
+      @extend .btn-info;
+    }
+  }
+  &.facetwp-type-search {
+    .facetwp-input-wrap {
+      width: 100%;
+      input {
+        @extend .form-control;
+        border-radius: 0;
+      }
+    }
+  }
+}
