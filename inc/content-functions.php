@@ -113,17 +113,18 @@ function siegal_object_info($post_id, $echo = false) {
     $html .=($meta_data['material'] ? '<span class="material">' . $meta_data['material'] . '</span>' : '');
 
     if($meta_data['dimensions']) :
-      $dim = $meta_data['dimensions'];
+      $dim = $meta_data['dimensions_old'];
       $html .='<div class="dimensions">';
-        $html .=($dim['width'] ? '<span class="width">' . $dim['width'] . '</span>' : '');
-
-
-        $html .=($dim['width'] && $dim['height'] ? ' x ' : '');  //'x before the value'
-        $html .=($dim['height'] ? '<span class="height">' . $dim['height'] . '</span>' : '');
-
-
-        $html .=(($dim['height'] || $dim['width']) && $dim['length'] ? ' x ' : '');  //'x before the value'
-        $html .=($dim['length'] ? '<span class="length">' . $dim['length'] . '</span>' : '');
+        $html .= '<span>' . $dim . '</span>';
+        // $html .=($dim['width'] ? '<span class="width">' . $dim['width'] . '</span>' : '');
+        //
+        //
+        // $html .=($dim['width'] && $dim['height'] ? ' x ' : '');  //'x before the value'
+        // $html .=($dim['height'] ? '<span class="height">' . $dim['height'] . '</span>' : '');
+        //
+        //
+        // $html .=(($dim['height'] || $dim['width']) && $dim['length'] ? ' x ' : '');  //'x before the value'
+        // $html .=($dim['length'] ? '<span class="length">' . $dim['length'] . '</span>' : '');
       $html .='</div>';
     endif;
 
@@ -171,7 +172,7 @@ function mind_format_phone($phoneNumber) {
 }
 
 
-// add_filter( 'render_block', 'mapi_block_wrapper', 10, 2 );
+add_filter( 'render_block', 'mapi_block_wrapper', 10, 2 );
 function mapi_block_wrapper( $block_content, $block ) {
   $noWrapper = array(
     'core/cover',
