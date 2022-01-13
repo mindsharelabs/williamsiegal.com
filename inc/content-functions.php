@@ -61,19 +61,21 @@ function seigal_get_object_slider() {
     $html .= '</div>';
 
 
-    $html .= '<div class="slide-controls">';
-      $html .= '<div class="interaction slide-prev"><i class="fal fa-angle-left"></i></div>';
-      $html .= '<div class="interaction slide-next"><i class="fal fa-angle-right"></i></div>';
-    $html .= '</div>';
 
 
-    $html .= '<div class="object-slides-navigation">';
-      foreach ($thumbs as $key => $thumb) :
-        $html .= '<div class="slide-nav ' . ($key == 0 ? 'current' : '') . '" data-slide="' . $key . '">';
-          $html .= $thumb;
-        $html .= '</div>';
-      endforeach;
-    $html .= '</div>';
+    if(count($thumbs) > 1) :
+      $html .= '<div class="slide-controls">';
+        $html .= '<div class="interaction slide-prev"><i class="fal fa-angle-left"></i></div>';
+        $html .= '<div class="interaction slide-next"><i class="fal fa-angle-right"></i></div>';
+      $html .= '</div>';
+      $html .= '<div class="object-slides-navigation">';
+        foreach ($thumbs as $key => $thumb) :
+          $html .= '<div class="slide-nav ' . ($key == 0 ? 'current' : '') . '" data-slide="' . $key . '">';
+            $html .= $thumb;
+          $html .= '</div>';
+        endforeach;
+      $html .= '</div>';
+    endif;
 
   wp_send_json_success( $html );
 }
