@@ -541,6 +541,7 @@ header {
         top: 60%;
         color: #fff;
         width: 100%;
+
         .interaction {
           width: 70px;
           height: 70px;
@@ -568,12 +569,14 @@ header {
       .object-slides-navigation {
         width: 100%;
         margin: 0 auto;
-        margin-top: -90px;
+        margin-top: -70px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         z-index: 10;
         position: relative;
+        opacity: 0;
+        @include transition(500ms);
         .slide-nav {
           width: 70px;
           height: 70px;
@@ -585,6 +588,13 @@ header {
           &.current {
             border: 5px solid #fff;
           }
+        }
+      }
+      &:hover {
+        .object-slides-navigation {
+          @include transition(100ms);
+          margin-top:-90px;
+          opacity: 1;
         }
       }
     }
