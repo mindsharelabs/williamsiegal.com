@@ -18,7 +18,7 @@ function seigal_get_object_slider() {
   $thumbs = array();
   if (has_post_thumbnail( $data['postID'] )) :
     $slides[] = array(
-      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'large),
+      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'large'),
       'orientation' => 'vertical'
     );
     $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
