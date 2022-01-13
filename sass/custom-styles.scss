@@ -569,7 +569,7 @@ header {
       .object-slides-navigation {
         width: 100%;
         margin: 0 auto;
-        margin-top: -70px;
+        margin-top: -80px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -593,7 +593,7 @@ header {
       &:hover {
         .object-slides-navigation {
           @include transition(100ms);
-          margin-top:-90px;
+          margin-top:-100px;
           opacity: 1;
         }
       }
