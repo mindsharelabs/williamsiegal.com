@@ -4,7 +4,7 @@
  * URL: https://mind.sh/are | @mindblank
  *
  */
-define('THEME_VERSION', '3.1.0');
+define('THEME_VERSION', '1.1.0');
 /*------------------------------------*\
     External Modules/Files
 \*------------------------------------*/
