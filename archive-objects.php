@@ -16,13 +16,13 @@
           <?php echo facetwp_display( 'facet', 'object_type' ); ?>
         </div>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-6">
         <div class="facet-container">
           <span class="label">Region</span>
           <?php echo facetwp_display( 'facet', 'region' ); ?>
         </div>
       </div>
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-6">
         <div class="facet-container">
           <span class="label">Culture</span>
           <?php echo facetwp_display( 'facet', 'culture' ); ?>
