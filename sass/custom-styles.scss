@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   &.sub-title {
     font-weight: 400;
   }
+  &.archive-title {
+    letter-spacing: 6px;
+    font-size: 26px;
+  }
 }
 strong {
   font-weight: 600;
@@ -417,6 +421,12 @@ header.top-header {
 }
 
 header {
+  &.archive-header {
+    margin-bottom: 20px;
+    p {
+      font-size: .9em;
+    }
+  }
   &.blog-header {
     background-repeat: no-repeat;
     background-size: cover;
@@ -736,7 +746,24 @@ p.wp-caption-text {
 }
 
 article {
-
+  &.publications {
+    h3 {
+      font-size: 22px;
+      color: $primary;
+      a {
+        color: $primary;
+      }
+    }
+    .contributors {
+      font-size: .8em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .excerpt {
+    
+    }
+  }
   &.objects {
     .object-card {
       position: relative;

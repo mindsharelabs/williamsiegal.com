@@ -1,5 +1,4 @@
-<?php get_header();
-?>
+<?php get_header(); ?>
 
 <main role="main" aria-label="Content">
   <?php include 'layout/archive-header.php'; ?>
@@ -8,7 +7,7 @@
       <?php
       $object = get_queried_object();
       while (have_posts()) : the_post();
-        get_template_part('loop-post');
+        get_template_part('loop-' . $object->name);
       endwhile;
       ?>
       </div>
