@@ -1,7 +1,7 @@
 <?php
 
 
-echo '<article id="post-' . get_the_id() . '" data-postID="' . get_the_id() . '" class="' . esc_attr( implode( ' ', get_post_class( 'col-6 col-md-4 col-lg-3 mb-3 slider-toggle', get_the_id() ) ) ) . '">';
+echo '<article id="post-' . get_the_id() . '" data-postID="' . get_the_id() . '" class="' . esc_attr( implode( ' ', get_post_class( 'col-6 col-md-4 col-lg-4 mb-3 slider-toggle', get_the_id() ) ) ) . '">';
   echo '<div class="object-card h-100">';
 
     echo '<div class="image-container">';

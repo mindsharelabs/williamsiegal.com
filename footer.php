@@ -22,6 +22,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 	<?php endif; ?>
 <?php
@@ -33,6 +34,10 @@
 			echo '</a>';
 		echo '</div>';
 		mindblank_nav('mobile-menu');
+
+		echo '<div class="search-form-mobile w-75 mx-auto py-3">';
+			get_search_form();
+		echo '</div>';
 	echo '</nav>';
 
 	echo '<nav id="mobileMenuToggle" class="menu-toggle d-flex d-md-none">';

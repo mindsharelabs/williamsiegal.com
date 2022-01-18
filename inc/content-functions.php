@@ -2,10 +2,6 @@
 
 add_action("wp_ajax_seigal_get_object_slider", "seigal_get_object_slider");
 add_action("wp_ajax_nopriv_seigal_get_object_slider", "seigal_get_object_slider");
-
-
-
-
 function seigal_get_object_slider() {
   $data = $_REQUEST;
   $html = '';
@@ -139,6 +135,16 @@ function siegal_object_info($post_id, $echo = false) {
 
 
 
+
+// Dropdown arrows to parent menu items
+add_filter( 'wp_nav_menu_objects', function ($sorted_menu_items, $args) {
+  foreach ($sorted_menu_items as $menu_item) {
+    if (array_search('menu-item-has-children', $menu_item->classes) != FALSE) {
+      $menu_item->title = '<span class="d-block mb-1">' . $menu_item->title . '</span><i class="fal fa-angle-down"></i>';
+    }
+  }
+  return $sorted_menu_items;
+}, 10, 2);
 
 
 

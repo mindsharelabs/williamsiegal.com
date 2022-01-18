@@ -286,7 +286,7 @@ header.top-header {
   height: 0;
   overflow: hidden;
   z-index: 19999;
-  background: $primary;
+  background: $dark;
   @include transition(100ms);
   &.show {
     height: 100vh;
@@ -300,8 +300,9 @@ header.top-header {
     padding: 30px 0;
     margin: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
@@ -309,11 +310,15 @@ header.top-header {
     li {
       display: block;
       width: 100%;
-      margin: 1px 0;
+      margin: 15px 0;
+      text-align: center;
+
       @include transition(100ms);
       a {
         padding: 8px 16px;
         display: block;
+        font-size: 22px;
+        font-weight: 100;
         width: 100%;
         color: $light;
         text-decoration: none;
@@ -326,22 +331,27 @@ header.top-header {
       }
       ul.sub-menu {
         max-height: 0;
+        opacity: 0;
         overflow: hidden;
         padding: 0;
         width: unset;
         display: flex;
         flex-direction: column;
         margin: 0 0 10px 20px;
-        background: darken($primary, 20%);
+        background: darken($dark, 2%);
+        @include transition(500ms);
         li {
           flex: 1;
+          margin: 0;
           a {
+            font-size: 18px;
             background: none;
           }
         }
       }
       &.expanded {
         ul.sub-menu {
+          opacity: 1;
           max-height: 900px;
           @include transition(200ms);
         }
@@ -761,7 +771,7 @@ article {
       font-weight: 600;
     }
     .excerpt {
-    
+
     }
   }
   &.objects {
