@@ -30,7 +30,7 @@
 	echo '<nav id="mobileMenu" class="mobile-nav d-block d-md-none">';
 		echo '<div class="mobile-logo my-4 mx-auto w-50">';
 			echo '<a href="' . home_url() . '">';
-				echo '<img src="' . get_template_directory_uri() . '/img/mindshare.svg" alt="' . get_bloginfo( "name" ) . '" class="logo-img">';
+				echo '<img src="' . get_template_directory_uri() . '/img/siegal-logo-white.svg" alt="' . get_bloginfo( "name" ) . '" class="logo-img">';
 			echo '</a>';
 		echo '</div>';
 		mindblank_nav('mobile-menu');
