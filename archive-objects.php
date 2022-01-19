@@ -2,8 +2,8 @@
 <main role="main" aria-label="Content">
   <header class="object-archive-header">
 
-    <div class="row">
-      <div class="object-archive-slider">
+    <div class="row mx-0">
+      <div class="object-archive-slider px-0">
 
       </div>
     </div>

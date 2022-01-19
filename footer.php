@@ -36,6 +36,7 @@
 		mindblank_nav('mobile-menu');
 
 		echo '<div class="search-form-mobile w-75 mx-auto py-3">';
+			echo '<span class="pb-3 small d-block text-center text-white">SEARCH</span>';
 			get_search_form();
 		echo '</div>';
 	echo '</nav>';

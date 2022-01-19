@@ -35,12 +35,12 @@
 
 				$(document).on('click', '#mobileMenuToggle', function(e) {
 
-					$('#mobileMenu').css('height', '100vh');
-					setTimeout( function() {
-            $('#mobileMenu').toggleClass('show');
-       		}, 100);
 
-
+					if($('#mobileMenu').hasClass('show')) {
+						$('#mobileMenu').removeClass('show').css('height', '0px');
+					} else {
+						$('#mobileMenu').addClass('show').css('height', '100vh');
+					}
 					$(this).toggleClass('active');
 
 				});
