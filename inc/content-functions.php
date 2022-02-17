@@ -64,7 +64,7 @@ function seigal_get_object_slider() {
         $html .= '<div class="interaction slide-prev"><i class="fal fa-angle-left"></i></div>';
         $html .= '<div class="interaction slide-next"><i class="fal fa-angle-right"></i></div>';
       $html .= '</div>';
-      $html .= '<div class="object-slides-navigation d-none d-md-block">';
+      $html .= '<div class="object-slides-navigation d-none d-md-flex">';
         foreach ($thumbs as $key => $thumb) :
           $html .= '<div class="slide-nav ' . ($key == 0 ? 'current' : '') . '" data-slide="' . $key . '">';
             $html .= $thumb;
