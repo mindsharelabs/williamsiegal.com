@@ -51,6 +51,7 @@ function seigal_get_object_slider() {
               $html .= get_the_title($data['postID']);
             $html .= '</h3>';
             $html .= siegal_object_info($data['postID']);
+
           $html .= '</div>';
         $html .= '</div>';
       $html .= '</div>';
@@ -123,7 +124,7 @@ function siegal_object_info($post_id, $echo = false) {
         // $html .=($dim['length'] ? '<span class="length">' . $dim['length'] . '</span>' : '');
       $html .='</div>';
     endif;
-
+    $html .= '<a href="' . get_permalink($post_id) . '" class="small mt-3 d-block text-white">View Information Page</a>';
   $html .='</div>';
 
   if($echo) :
