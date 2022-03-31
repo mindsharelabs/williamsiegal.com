@@ -452,7 +452,7 @@ header {
     background-position: center;
     background-blend-mode: luminosity;
   }
-  &.object-archive-header, &.object-header {
+  &.object-archive-header {
     position: relative;
     height: 0;
     top:0;
@@ -662,6 +662,18 @@ header {
       width: 100%;
       background: rgba(1,1,1,.9);
       z-index: 99999;
+    }
+  }
+  &.object-header {
+    .object-header-images {
+      overflow: scroll;
+      white-space: nowrap;
+      .image-cont {
+        max-height: 70vh;
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+      }
     }
   }
 }

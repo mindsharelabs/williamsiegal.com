@@ -7,7 +7,7 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
 
       <?php
       if($object_data['images']) :
-        echo '<div class="object-header-images">';
+        echo '<div class="object-header-images displaying">';
           foreach ($object_data['images'] as $key => $image) :
             echo '<div class="image-cont">';
               echo wp_get_attachment_image( $image['image']['ID'], 'large');
@@ -16,26 +16,24 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
         echo '</div>';
       endif;
       ?>
-      <div class="object-information">
-        <h1 class="object-title"><?php the_title(); ?></h1>
-        <?php echo siegal_object_info(get_the_id()); ?>
-      </div>
-    </header>
-    <div class="container my-0">
-      <div class="row my-0">
-        <div class="col-12 my-0 spacer-item">
-        </div>
-      </div>
-    </div>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-      <div class="row">
-        <div class="col-12 col-md-4">
 
-        </div>
-        <div class="col-12 col-md-8 mt-3">
+    </header>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <div class="container">
+        <div class="row my-0">
+          <div class="col-12 my-0 spacer-item">
+            <div class="object-information">
+              <h1 class="object-title"><?php the_title(); ?></h1>
+              <?php echo siegal_object_info(get_the_id()); ?>
+
+            </div>
+          </div>
           <?php the_content(); ?>
         </div>
       </div>
+
+
+
 
     </article>
   </main>
