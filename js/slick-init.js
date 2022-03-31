@@ -22,9 +22,15 @@
 
 
     $(document).ready(function() {
+
+      $(document).on('click', '.object-header-toggle', function() {
+        $('.object-archive-header').removeClass('displaying');
+      });
+
       $(document).on('click', '.slider-toggle', function() {
         var postID = $(this).attr('data-postID');
         $('.slider-toggle').not(this).removeClass('current');
+        $('.object-archive-header').addClass('displaying');
         $(this).addClass('current');
 
         $.ajax({

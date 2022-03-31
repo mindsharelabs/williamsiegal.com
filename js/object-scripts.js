@@ -34,7 +34,7 @@
 
 
     var position = $('.spacer-item').position();
-    console.log(position.left);
+    // console.log(position.left);
     $('header .object-information').css({
       "left" : position.left + "px",
 
