@@ -11,7 +11,7 @@
       <div class="object-archive-slider px-0"></div>
     </div>
   </header>
-  <section class="object-filters mt-3 container">
+  <section class="object-filters mt-5 pt-5 container">
     <div class="row">
       <div class="col-12">
         <div class="facet-container">
