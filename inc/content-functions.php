@@ -191,7 +191,7 @@ function mapi_block_wrapper( $block_content, $block ) {
   if(!in_array($block['blockName'], $noWrapper)) :
     $content = '<div class="container">';
       $content .= '<div class="row">';
-        $content .= '<div class="col-12">';
+        $content .= '<div class="col-12 col-md-10 col-lg-8 offset-0 offset-md-1 offset-lg-2">';
           $content .= $block_content;
         $content .= '</div>';
       $content .= '</div>';
