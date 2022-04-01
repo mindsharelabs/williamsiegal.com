@@ -54,12 +54,10 @@
                   arrows : true,
                   dots : false,
                   slidesToShow : 1,
-                  centerMode : false,
+                  centerMode : true,
                   infinite : false,
                   nextArrow: $('.slide-controls .slide-next'),
         					prevArrow: $('.slide-controls .slide-prev'),
-
-        					// appendDots: $('.object-slides .slide-dots'),
                 });
                 $(document).on('click', '.slide-nav', function() {
                   var slideID = $(this).attr('data-slide');
@@ -71,7 +69,7 @@
                   $('.slide-nav[data-slide="' + currentSlide + '"]').removeClass('current');
                   $('.slide-nav[data-slide="' + nextSlide + '"]').addClass('current');
                 });
-              
+
               });
 
             }
