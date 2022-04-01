@@ -2,13 +2,13 @@
 <main role="main" aria-label="Content">
   <header class="object-archive-header">
 
-    <div class="row mx-0">
+    <div class="row mx-0 w-100">
       <div class="object-header-close container">
         <div class="row">
           <span class="object-header-toggle"><i class="fas fa-times fa-2x"></i></span>
         </div>
       </div>
-      <div class="object-archive-slider px-0"></div>
+      <div class="object-archive-slider px-0  w-100"></div>
     </div>
   </header>
   <section class="object-filters mt-5 pt-5 container">
