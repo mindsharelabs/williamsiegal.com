@@ -11,7 +11,12 @@ get_header();
       </div>
     </header>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <?php the_content(); ?>
+      <div class="row">
+        <div class="col-12 col-md-10 col-lg-8 offset-0 offset-md-1 offset-lg-2">
+          <?php the_content(); ?>
+        </div>
+      </div>
+
     </article>
   <?php endwhile; endif; ?>
 </main>
