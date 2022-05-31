@@ -20,7 +20,7 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="facet-container">
-          <span class="label">Culture</span>
+          <span class="label">Sort by Culture</span>
           <?php echo facetwp_display( 'facet', 'culture' ); ?>
         </div>
       </div>
