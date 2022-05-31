@@ -292,7 +292,7 @@ header.top-header {
   right: 0;
   top:0;
   height: 0;
-  overflow: hidden;
+  overflow: scroll;
   z-index: 19999;
   background: $dark;
   @include transition(100ms);
@@ -310,7 +310,7 @@ header.top-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
@@ -318,12 +318,13 @@ header.top-header {
     li {
       display: block;
       width: 100%;
-      margin: 15px 0;
-      text-align: center;
+      margin: 8px 0;
+      text-align: left;
 
       @include transition(100ms);
       a {
         padding: 8px 16px;
+        position: relative;
         display: block;
         font-size: 22px;
         font-weight: 100;
@@ -331,6 +332,11 @@ header.top-header {
         color: $light;
         text-decoration: none;
         @include transition(200ms);
+        svg {
+          position: absolute;
+          top: 8px;
+          right: 0;
+        }
         &:hover {
           color: $light;
           text-decoration: underline;
