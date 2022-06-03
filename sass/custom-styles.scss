@@ -459,9 +459,9 @@ header {
     background-position: center;
     background-blend-mode: luminosity;
   }
-  &.object-archive-header {
+  &.object-archive-header, &.object-header {
     position: relative;
-    height: 0;
+    height: 0; 
     top:0;
     bottom: 0;
     overflow: hidden;
