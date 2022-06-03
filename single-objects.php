@@ -7,7 +7,7 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
 
       <?php
       if($object_data['images']) :
-        echo '<div class="object-header-images displaying">';
+        echo '<div class="object-header-images displaying ' . (count($object_data['images']) == 1 ? 'text-center' : '') . '">';
           foreach ($object_data['images'] as $key => $image) :
             echo '<div class="image-cont">';
               echo wp_get_attachment_image( $image['image']['ID'], 'large');
