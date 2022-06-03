@@ -5,8 +5,8 @@ get_header();
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <header class="page-header container mt-5">
       <div class="row pt-5">
-        <div class="col-12 col-md-10 col-lg-8 offset-0 offset-md-1 offset-lg-2">
-          <h1 class="page-title"><?php the_title(); ?></h1>
+        <div class="col-12 col-md-10 col-lg-8 offset-0 offset-md-1 offset-lg-2 px-0">
+          <h1 class="page-title text-center text-md-start"><?php the_title(); ?></h1>
         </div>
       </div>
     </header>
