@@ -119,6 +119,7 @@ header.top-header {
   right: 0;
   z-index: 9999;
   opacity: 1;
+  width: 100%;
   @include transition(500ms);
   .logo {
     max-width: 390px;
