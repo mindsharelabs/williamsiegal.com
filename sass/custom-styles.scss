@@ -844,7 +844,9 @@ article {
       border: 6px solid transparent;
       cursor: pointer;
       .card-information, .image-container {
-
+        img {
+          width: 100%;
+        }
       }
       .card-information {
         letter-spacing: 0;

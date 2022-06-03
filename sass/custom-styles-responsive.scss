@@ -49,6 +49,15 @@
       }
     }
   }
+  article {
+    &.objects {
+      .object-card {
+        .card-information {
+          opacity: 1;
+        }
+      }
+    }
+  }
   footer.footer {
     ul {
       flex-direction: column;
