@@ -23,7 +23,11 @@ function seigal_get_object_slider() {
     foreach ($images as $key => $image) :
       $width = $image['sizes']['large-width'];
       $height = $image['sizes']['large-height'];
+      if($width && $height) :
       $orientation = (($width/$height) >= 1 ? 'horizontal' : 'vertical');
+      else :
+        $orientation = 'horizontal';
+      endif;
       $slides[] = array(
         'html' => wp_get_attachment_image( $image['image']['ID'], 'large'),
         'orientation' => $orientation

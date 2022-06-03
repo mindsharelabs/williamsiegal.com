@@ -121,7 +121,7 @@ header.top-header {
   opacity: 1;
   @include transition(500ms);
   .logo {
-    max-width: 300px;
+    max-width: 390px;
     a {
       img, svg {
         max-width: 100%;
@@ -144,7 +144,7 @@ header.top-header {
       width: 100%;
       list-style: none;
       line-height: 1em;
-      font-size: .65em;
+      font-size: .75em;
       white-space: nowrap;
       li {
         margin: 5px;
@@ -480,7 +480,9 @@ header {
         zoom: 1;
         vertical-align: top;
         img {
-          max-height: 600px;
+          max-width: 100%;
+          height: auto;
+          max-height: 70vh;
           width: auto;
         }
       }
