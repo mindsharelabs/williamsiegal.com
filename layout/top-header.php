@@ -1,5 +1,5 @@
 <header class="header top-header <?php echo (is_front_page() ? 'front-page' : ''); ?>" role="banner">
-  <div class="container py-1">
+  <div class="container-fluid py-1">
     <div class="row">
       <div class="col-10 col-md-5 col-lg-4 logo pt-1 pb-1 my-auto mx-auto">
         <a href="<?php echo home_url(); ?>">

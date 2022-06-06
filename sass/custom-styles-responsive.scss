@@ -37,6 +37,7 @@
     }
   }
   header {
+
     &.object-archive-header {
       .object-archive-slider {
         .object-slides-navigation, .slide-controls, .object-information {
@@ -74,6 +75,13 @@
     }
   }
   header {
+    &.top-header {
+      nav.header-menu {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
     &.object-archive-header {
       .object-archive-slider {
         .object-slides-navigation, .slide-controls, .object-information {
@@ -103,6 +111,13 @@
     }
   }
   header {
+    &.top-header {
+      nav.header-menu {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
     &.object-archive-header {
       .object-archive-slider {
         .object-slides-navigation, .slide-controls, .object-information {
@@ -131,6 +146,13 @@
     }
   }
   header {
+    &.top-header {
+      nav.header-menu {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
     &.object-archive-header {
       .object-archive-slider {
         .object-slides-navigation, .slide-controls, .object-information {
@@ -150,7 +172,17 @@
     }
   }
 }
-
+@media (min-width: 1400px) {
+  header {
+    &.top-header {
+      nav.header-menu {
+        ul {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
 /* Define xs styles after defaults so they take precedence */
 
 .text-xs-left {
