@@ -15,9 +15,13 @@
   <section class="object-archive-posts container mt-5">
     <div class="row">
       <?php
-      while (have_posts()) : the_post();
-        get_template_part( 'loop-object');
-      endwhile;
+      if(have_posts()) :
+        while (have_posts()) : the_post();
+          get_template_part('loop-object');
+        endwhile;
+      else :
+        echo '<h2>Nothing found</h2>';
+      endif;
       ?>
     </div>
     <?php get_template_part('pagination'); ?>
