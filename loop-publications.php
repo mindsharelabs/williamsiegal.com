@@ -19,7 +19,7 @@
         if($fields['author'] || count($fields['contributors']) > 0) :
           echo '<div class="contributors">';
             echo ($fields['author'] ? '<span class="author">By: ' . $fields['author'] . '</span> (author)' : '');
-            if(count($fields['contributors']) > 0) :
+            if($fields['contributors']) :
               echo ', ';
               foreach ($fields['contributors'] as $key => $cont) :
                 echo '<span class="contributor">' . $cont['contributor_name'] . '</span> (contributor)';
