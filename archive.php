@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main role="main" aria-label="Content">
-  <?php include 'layout/archive-header.php'; ?>
   <section <?php post_class('container'); ?>>
     <div class="row">
       <?php
