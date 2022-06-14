@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main role="main" aria-label="Content">
-  <section <?php post_class('container'); ?>>
+  <section <?php post_class('container mt-5'); ?>>
     <div class="row">
       <?php
       $object = get_queried_object();
