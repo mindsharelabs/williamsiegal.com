@@ -2,7 +2,7 @@
 
 <main role="main" aria-label="Content">
   <section <?php post_class('container mt-5'); ?>>
-    <div class="row">
+    <div class="row mt-5">
       <?php
       $object = get_queried_object();
       while (have_posts()) : the_post();
