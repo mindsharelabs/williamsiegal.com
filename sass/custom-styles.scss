@@ -838,10 +838,13 @@ article {
     }
   }
   &.objects {
+
     .object-card {
       position: relative;
       display: flex;
       border: 6px solid transparent;
+      min-height: 200px;
+      background: $info;
       cursor: pointer;
       .card-information, .image-container {
         img {
@@ -862,6 +865,7 @@ article {
         flex-direction: column;
         justify-content: space-around;
         padding: 10px;
+        overflow: hidden;
         h3.object-title {
           font-size: 20px;
           text-transform: uppercase;
