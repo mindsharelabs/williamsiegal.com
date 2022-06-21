@@ -26,7 +26,7 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
         echo '</div>';
       endif;
       ?>
-
+      <button class="scroll-right">Scroll<i class="fal fa-angle-right ms-3"></i></button>
     </header>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="container">

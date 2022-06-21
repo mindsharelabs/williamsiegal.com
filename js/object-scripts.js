@@ -38,7 +38,10 @@
     $('header .object-information').css({
       "left" : position.left + "px",
 
-    })
+    });
+
+
+
 
   });
 
