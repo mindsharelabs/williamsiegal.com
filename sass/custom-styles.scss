@@ -471,7 +471,7 @@ header {
     align-items: center;
     background: $black;
     .object-header-images {
-      overflow: scroll;
+      overflow-x: scroll;
       white-space: nowrap;
       .image-cont {
         max-height: 600px;
