@@ -12,19 +12,21 @@ function seigal_get_object_slider() {
 
   $slides = array();
   $thumbs = array();
-  if (has_post_thumbnail( $data['postID'] )) :
-    $slides[] = array(
-      'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'large'),
-      'orientation' => 'vertical'
-    );
-    $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
-  endif;
+  // if (has_post_thumbnail( $data['postID'] )) :
+  //   $slides[] = array(
+  //     'html' => wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'large'),
+  //     'orientation' => 'vertical'
+  //   );
+  //   $thumbs[] = wp_get_attachment_image( get_post_thumbnail_id($data['postID']), 'thumbnal-square');
+  // endif;
   if($images) :
+    $displayed_images = array();
     foreach ($images as $key => $image) :
-      $width = $image['sizes']['large-width'];
-      $height = $image['sizes']['large-height'];
+
+      $width = (isset($image['sizes']['large-width']) ? $image['sizes']['large-width'] : null);
+      $height = (isset($image['sizes']['large-height']) ? $image['sizes']['large-height'] : null);
       if($width && $height) :
-      $orientation = (($width/$height) >= 1 ? 'horizontal' : 'vertical');
+        $orientation = (($width/$height) >= 1 ? 'horizontal' : 'vertical');
       else :
         $orientation = 'horizontal';
       endif;
@@ -32,8 +34,10 @@ function seigal_get_object_slider() {
         'html' => wp_get_attachment_image( $image['image']['ID'], 'large'),
         'orientation' => $orientation
       );
-
       $thumbs[] = wp_get_attachment_image( $image['image']['ID'], 'thumbnal-square');
+      $displayed_images[] = $image['image']['ID'];
+
+
     endforeach;
   endif;
 

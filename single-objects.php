@@ -7,15 +7,15 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
 
       <?php
       if($object_data['images']) :
-        if(has_post_thumbnail()) :
-          //if we have a post thumbnail, make sure it's part of the header
-          $featured_image = array(
-            'image' => array(
-              'ID' => get_post_thumbnail_id(get_the_id())
-            )
-          );
-          array_unshift($object_data['images'], $featured_image);
-        endif;
+        // if(has_post_thumbnail()) :
+        //   //if we have a post thumbnail, make sure it's part of the header
+        //   $featured_image = array(
+        //     'image' => array(
+        //       'ID' => get_post_thumbnail_id(get_the_id())
+        //     )
+        //   );
+        //   array_unshift($object_data['images'], $featured_image);
+        // endif;
 
         echo '<div class="object-header-images displaying ' . (count($object_data['images']) == 1 ? 'text-center' : '') . '">';
           foreach ($object_data['images'] as $key => $image) :
