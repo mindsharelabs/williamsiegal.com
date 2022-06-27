@@ -33,7 +33,7 @@ if(have_posts()) : while(have_posts()) : the_post(); ?>
         <div class="row my-0">
           <div class="col-12 my-0 spacer-item">
             <div class="object-information">
-              <h1 class="object-title"><?php the_title(); ?></h1>
+              <h1 class="object-title mt-4"><?php the_title(); ?></h1>
               <?php echo siegal_object_info(get_the_id()); ?>
 
             </div>

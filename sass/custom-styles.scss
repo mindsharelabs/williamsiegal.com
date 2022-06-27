@@ -473,6 +473,7 @@ header {
     .object-header-images {
       overflow-x: scroll;
       white-space: nowrap;
+      background: #30322f;
       .image-cont {
         max-height: 600px;
         width: auto;
@@ -687,8 +688,9 @@ header {
       bottom: 20px;
     }
     .object-header-images {
-      overflow: scroll;
+      overflow-x: scroll;
       white-space: nowrap;
+      background: #30322f;
       .image-cont {
         max-height: 70vh;
         width: auto;
